@@ -15,9 +15,10 @@
 }
 .wheel-wrapper {
   @apply relative flex items-center justify-center;
-  zoom: 0.4;
+  transform: scale(0.5);
 }
 .wheel-container {
+  @apply rounded-full;
   transform: rotate(-90deg);
 }
 
@@ -97,11 +98,11 @@
 
 @media (min-width: 380px) {
   .wheel-wrapper {
-    zoom: 0.7;
+    transform: scale(0.7);
   }
 }
 @media (min-width: 500px) {
   .wheel-wrapper {
-    zoom: 1;
+   transform: scale(1);
   }
 }
