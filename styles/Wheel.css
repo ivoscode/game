@@ -1,0 +1,107 @@
+:root {
+  --wheel-size: 460px;
+  --wheel-border-size: 5px;
+  --wheel-color: black;
+  --segment-text: #666666
+  --secondary-color: white;
+  --PI: 3.1975265358979;
+  --nb-items: 0;
+  --item-nb: 0;
+  --selected-item: 0;
+  --nb-turn: 6;
+  --spinning-duration: 5s;
+  --item-color: 0;
+  --center-color: #cccccc;
+}
+.wheel-wrapper {
+  @apply relative flex items-center justify-center;
+  zoom: 0.4;
+}
+.wheel-container {
+  transform: rotate(-90deg);
+}
+
+.wheel {
+  @apply block relative m-auto overflow-hidden cursor-pointer rounded-full box-content;
+  width: var(--wheel-size);
+  height: var(--wheel-size);
+  border: solid var(--wheel-color) var(--wheel-border-size);
+}
+
+.wheel.spinning {
+  transition: transform var(--spinning-duration);
+  transform: rotate(
+    calc(
+      var(--nb-turn) * 360deg +
+        (-360deg * var(--selected-item) / var(--nb-items))
+    )
+  );
+}
+/* Wheel center */
+.wheel::after {
+  @apply block absolute  rounded-full;
+  content: "";
+  background-color: var(--center-color);
+  width: 150px;
+  height: 150px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: solid var(--wheel-color) var(--wheel-border-size);
+}
+/* Wheel center text */
+.wheel-wrapper::before {
+  @apply absolute  rounded-full flex justify-center items-center font-semibold text-lg cursor-pointer top-1/2 left-1/2;
+  z-index: 2;
+  content: "SPIN";
+  transform: translate(-50%, -50%);
+}
+/* Wheel arrow */
+.arrow {
+  @apply absolute z-10 top-1/2 left-1/2 w-0 h-0;
+  position: absolute;
+  transform: translate(-50%, -190%);
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 80px solid black;
+}
+
+.wheel-container::after {
+  @apply top-1/2 left-1/2 absolute z-10 rounded-full flex justify-center items-center font-semibold text-lg cursor-pointer;
+  content: "";
+  transform: translate(-50%, -50%);
+}
+
+/* Wheel segment */
+.wheel-segment {
+  @apply block absolute top-1/2 left-1/2 w-1/2 text-left text-2xl;
+
+  transform-origin: center left;
+  transform: translateY(-50%)
+    rotate(calc(var(--item-nb) * (360deg / var(--nb-items, 1))));
+  color: var(--segment-text);
+  padding: 0 25px 0 50px;
+}
+
+.wheel-segment:before {
+  @apply block absolute w-0 h-0 top-1/2 left-1/2;
+  content: " ";
+  z-index: -3;
+  transform: translate(-50%, -50%);
+  --slice-max-width: calc(var(--PI) * 2 * (var(--wheel-size) / 2));
+  --slice-width: calc((var(--slice-max-width) / var(--nb-items)));
+  border: solid transparent calc(var(--slice-width) / 2);
+  border-left: solid transparent 0;
+  border-right: solid var(--item-color) calc(var(--wheel-size) / 2);
+}
+
+@media (min-width: 380px) {
+  .wheel-wrapper {
+    zoom: 0.7;
+  }
+}
+@media (min-width: 500px) {
+  .wheel-wrapper {
+    zoom: 1;
+  }
+}
