@@ -65,10 +65,10 @@ export const prizes = [
     color: "#FF9933",
     desc: "prize3 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis odio aliquet dui vestibulum, ac mollis augue convallis. Nam tincidunt arcu a mi gravida, in porttitor nisl fringilla. Nullam dignissim a magna a hendrerit. Pellentesque tincidunt neque et nibh cursus, in gravida est tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
   },
-  // {
-  //   id: 12,
-  //   title: "Prize 4",
-  //   color: "#FF3366",
-  //   desc: "prize4 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis odio aliquet dui vestibulum, ac mollis augue convallis. Nam tincidunt arcu a mi gravida, in porttitor nisl fringilla. Nullam dignissim a magna a hendrerit. Pellentesque tincidunt neque et nibh cursus, in gravida est tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
-  // },
+  {
+    id: 12,
+    title: "Prize 4",
+    color: "#FF3366",
+    desc: "prize4 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis odio aliquet dui vestibulum, ac mollis augue convallis. Nam tincidunt arcu a mi gravida, in porttitor nisl fringilla. Nullam dignissim a magna a hendrerit. Pellentesque tincidunt neque et nibh cursus, in gravida est tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
+  },
 ];
