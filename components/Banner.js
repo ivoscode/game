@@ -7,7 +7,7 @@ export default function Banner() {
       <p className=" text-2xl md:text-3xl">
         reward take a spin for some amazing prizes!
       </p>
-      <p className="my-10">Click anywhere on the wheel to start to spin</p>
+      <p className="my-10 ">Click anywhere on the wheel to start to spin</p>
     </div>
   );
 }

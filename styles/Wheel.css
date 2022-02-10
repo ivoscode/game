@@ -15,6 +15,7 @@
 }
 .wheel-wrapper {
   @apply relative flex items-center justify-center;
+  margin: -100px auto;
   transform: scale(0.5);
 }
 .wheel-container {
@@ -98,11 +99,14 @@
 
 @media (min-width: 380px) {
   .wheel-wrapper {
+     margin: -50px auto;
     transform: scale(0.7);
+    
   }
 }
 @media (min-width: 500px) {
   .wheel-wrapper {
+    margin: 20px auto;
    transform: scale(1);
   }
 }
